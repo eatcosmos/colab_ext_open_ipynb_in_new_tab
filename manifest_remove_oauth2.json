@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+  "name": "Colab File Opener",
+  "version": "1.0",
+  "permissions": [
+    "tabs",
+    "identity",
+    "https://www.googleapis.com/*",
+    "https://colab.research.google.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://colab.research.google.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "oauth2": {
+    // "client_id": "",
+    "client_id": "",
+    "scopes": ["https://www.googleapis.com/auth/drive.readonly"]
+  }
+}
